@@ -11,7 +11,6 @@ const Map<String, String> emojiToText = {
   '😴': 'Sleepy',
   '🤔': 'Thinking',
   '😱': 'Shocked',
-  '🤗': 'Hugging',
 };
 
 class EntriesHistoryScreen extends StatefulWidget {
@@ -64,7 +63,7 @@ class _EntriesHistoryScreenState extends State<EntriesHistoryScreen> {
   void _showEditDialog(JournalEntry entry) {
     final TextEditingController textController = TextEditingController(text: entry.text);
     String selectedEmoji = entry.emoji;
-    final List<String> availableEmojis = ['🙂', '😢', '😠', '😍', '😴', '🤔', '😱', '🤗'];
+    final List<String> availableEmojis = ['🙂', '😢', '😠', '😍', '😴', '🤔', '😱'];
 
     showDialog(
       context: context,

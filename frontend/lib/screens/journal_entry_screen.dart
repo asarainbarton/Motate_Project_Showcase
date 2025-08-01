@@ -11,7 +11,6 @@ const Map<String, String> emojiToText = {
   '😴': 'Sleepy',
   '🤔': 'Thinking',
   '😱': 'Shocked',
-  '🤗': 'Hugging',
 };
 
 class JournalEntryScreen extends StatefulWidget {
@@ -23,7 +22,7 @@ class _JournalEntryScreenState extends State<JournalEntryScreen> {
   final TextEditingController _controller = TextEditingController();
   String _selectedEmoji = '🙂';
   bool _loading = false;
-  final List<String> _availableEmojis = ['🙂', '😢', '😠', '😍', '😴', '🤔', '😱', '🤗'];
+  final List<String> _availableEmojis = ['🙂', '😢', '😠', '😍', '😴', '🤔', '😱'];
 
   void _submitEntry() async {
     if (_controller.text.trim().isEmpty) {

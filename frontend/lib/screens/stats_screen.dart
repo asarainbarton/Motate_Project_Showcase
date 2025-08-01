@@ -11,7 +11,6 @@ const Map<String, String> emojiToText = {
   '😴': 'Sleepy',
   '🤔': 'Thinking',
   '😱': 'Shocked',
-  '🤗': 'Hugging',
 };
 
 class StatsScreen extends StatefulWidget {
