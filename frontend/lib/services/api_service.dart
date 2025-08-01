@@ -138,10 +138,20 @@ class ApiService {
       final response = await http.get(Uri.parse('$baseUrl/export/csv'));
       
       if (response.statusCode == 200) {
-        final directory = await getApplicationDocumentsDirectory();
-        final file = File('${directory.path}/journal_entries.csv');
-        await file.writeAsBytes(response.bodyBytes);
-        return {'success': true, 'path': file.path};
+        try {
+          // Try to get the documents directory
+          final directory = await getApplicationDocumentsDirectory();
+          final file = File('${directory.path}/journal_entries.csv');
+          await file.writeAsBytes(response.bodyBytes);
+          return {'success': true, 'path': file.path};
+        } catch (pathError) {
+          // Fallback: Return the CSV data directly for manual handling
+          return {
+            'success': true, 
+            'csvData': response.body,
+            'message': 'CSV data ready - please copy the content manually'
+          };
+        }
       } else {
         return {'success': false, 'error': 'Failed to export CSV'};
       }

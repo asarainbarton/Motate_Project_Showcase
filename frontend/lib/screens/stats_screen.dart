@@ -76,12 +76,18 @@ class _StatsScreenState extends State<StatsScreen> with TickerProviderStateMixin
     final result = await ApiService.exportCSV();
     
     if (result['success']) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('CSV exported to ${result['path']}'),
-          backgroundColor: Colors.green,
-        ),
-      );
+      if (result.containsKey('path')) {
+        // File was successfully saved
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('CSV exported to ${result['path']}'),
+            backgroundColor: Colors.green,
+          ),
+        );
+      } else if (result.containsKey('csvData')) {
+        // Fallback: Show CSV data in a dialog for manual copying
+        _showCSVDataDialog(result['csvData']);
+      }
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
@@ -90,6 +96,44 @@ class _StatsScreenState extends State<StatsScreen> with TickerProviderStateMixin
         ),
       );
     }
+  }
+
+  void _showCSVDataDialog(String csvData) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('CSV Export Data'),
+          content: Container(
+            width: double.maxFinite,
+            height: 400,
+            child: Column(
+              children: [
+                Text(
+                  'Copy the CSV data below:',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 10),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: SelectableText(
+                      csvData,
+                      style: TextStyle(fontFamily: 'monospace', fontSize: 12),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text('Close'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   Widget _buildWeeklyMoodChart() {
