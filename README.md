@@ -1,26 +1,26 @@
-# 🧠 Emotion Journal - AI Mood Detection App
+# Emotion Journal - AI Mood Detection App
 
 A real-time emotion journal application with AI-powered mood detection, built with Flutter (frontend) and FastAPI (backend).
 
-## ✨ Features
+## Features
 
 ### Core Functionality
-- 📝 **Journal Entry Creation**: Write daily thoughts and feelings
-- 🎭 **Emoji Mood Selection**: Choose from 8 different mood emojis
-- 🤖 **AI Sentiment Analysis**: Automatic mood detection using DistilBERT
-- 📊 **Advanced Analytics**: Multiple chart types and statistics
-- 📱 **Cross-Platform**: Flutter app works on iOS and Android
-- 💾 **Data Export**: Export journal entries to CSV
+- **Journal Entry Creation**: Write daily thoughts and feelings
+- **Emoji Mood Selection**: Choose from 8 different mood emojis
+- **AI Sentiment Analysis**: Automatic mood detection using DistilBERT
+- **Advanced Analytics**: Multiple chart types and statistics
+- **Cross-Platform**: Flutter app works on iOS and Android
+- **Data Export**: Export journal entries to CSV
 
 ### Enhanced Features
-- 📈 **Weekly Mood Distribution**: Bar chart showing mood patterns
-- 🏆 **Most Common Emotions**: Track your frequent emotional states
-- 🎯 **AI Sentiment Distribution**: Pie chart of positive/negative/neutral sentiments
-- 📚 **Entry History**: View, edit, and delete past entries
-- 🔍 **Real-time Analysis**: Instant AI feedback on your entries
-- 🎨 **Modern UI**: Clean, intuitive design with smooth animations
+- **Weekly Mood Distribution**: Bar chart showing mood patterns
+- **Most Common Emotions**: Track your frequent emotional states
+- **AI Sentiment Distribution**: Pie chart of positive/negative/neutral sentiments
+- **Entry History**: View, edit, and delete past entries
+- **Real-time Analysis**: Instant AI feedback on your entries
+- **Modern UI**: Clean, intuitive design with smooth animations
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Frontend (Flutter)
 - **Framework**: Flutter/Dart
@@ -41,7 +41,7 @@ A real-time emotion journal application with AI-powered mood detection, built wi
 - **Task**: Sentiment Analysis
 - **Output**: Positive/Negative classification with confidence scores
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Python 3.8+
@@ -104,7 +104,7 @@ A real-time emotion journal application with AI-powered mood detection, built wi
    flutter run -d android   # Android Emulator
    ```
 
-## 📱 App Screens
+## App Screens
 
 ### 1. Journal Entry Screen
 - **Purpose**: Create new journal entries
@@ -132,7 +132,7 @@ A real-time emotion journal application with AI-powered mood detection, built wi
   - Export to CSV functionality
   - Refresh data capability
 
-## 🔌 API Endpoints
+## API Endpoints
 
 ### Journal Entries
 - `POST /entry` - Create new journal entry
@@ -149,7 +149,7 @@ A real-time emotion journal application with AI-powered mood detection, built wi
 ### Data Export
 - `GET /export/csv` - Export all entries to CSV
 
-## 🗄 Database Schema
+## Database Schema
 
 ```sql
 CREATE TABLE entries (
@@ -162,7 +162,7 @@ CREATE TABLE entries (
 );
 ```
 
-## 🎨 UI/UX Features
+## UI/UX Features
 
 ### Design System
 - **Color Scheme**: Blue primary with grey accents
@@ -176,7 +176,7 @@ CREATE TABLE entries (
 - **Loading States**: Visual feedback during operations
 - **Accessibility**: Proper contrast and touch targets
 
-## 🔧 Configuration
+## Configuration
 
 ### Backend Configuration
 - **Database**: SQLite file (`journal.db`)
@@ -188,7 +188,7 @@ CREATE TABLE entries (
 - **iOS Simulator**: Change to `http://localhost:8000`
 - **Web**: Change to `http://localhost:8000`
 
-## 📊 Data Analytics
+## Data Analytics
 
 ### Mood Tracking
 - Weekly mood distribution charts
@@ -200,7 +200,7 @@ CREATE TABLE entries (
 - Confidence scores for each analysis
 - Positive/negative/neutral distribution
 
-## 🚀 Deployment
+## Deployment
 
 ### Backend Deployment
 1. **Production Settings**:
@@ -222,7 +222,7 @@ CREATE TABLE entries (
 2. **Android**: `flutter build apk`
 3. **iOS**: `flutter build ios`
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -230,18 +230,18 @@ CREATE TABLE entries (
 4. Add tests if applicable
 5. Submit a pull request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Hugging Face**: For the DistilBERT model
 - **Flutter Team**: For the amazing framework
 - **FastAPI**: For the excellent Python web framework
 - **Charts Flutter**: For beautiful data visualizations
 
-## 📞 Support
+## Support
 
 If you encounter any issues or have questions:
 1. Check the API documentation at `/docs`
@@ -251,4 +251,4 @@ If you encounter any issues or have questions:
 
 ---
 
-**Happy Journaling! 📝✨**
+**Happy Journaling!**
